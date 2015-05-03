@@ -11,4 +11,6 @@ function blackScholesCall(S0,k,r,σ,t)
  return S0*cdf(Normal(),d1)-k*exp(-r*t)*cdf(Normal(),d2)
 
 
+#princing d'un put par la formule de black et scholes
+
 end
