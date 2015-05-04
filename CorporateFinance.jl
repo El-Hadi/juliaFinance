@@ -19,10 +19,6 @@ function échéancierAnnuité(M,n,i)
 
   end
 
-
-
-
-
   return eche
 end
 
