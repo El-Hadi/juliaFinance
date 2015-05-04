@@ -1,3 +1,6 @@
+
+#fonction de calcul d'échéancier
+
 function échéancierAnnuité(M,n,i)
   A=M/((1-(1+i)^-n)/i)
   eche=zeros(n,5)
