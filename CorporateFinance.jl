@@ -1,3 +1,6 @@
+
+#fonction de calcul d'échéancier
+
 function échéancierAnnuité(M,n,i)
   #A annuité
   #M montant de l'emprunt
@@ -20,10 +23,6 @@ function échéancierAnnuité(M,n,i)
 
 
   end
-
-
-
-
 
   return eche
 end
