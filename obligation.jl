@@ -1,3 +1,7 @@
+
+
+# calcul du prix d'une obligation
+
 function prixObligation(c,M,t,i)
   temps=[0.5:0.5:t]
   cf=c*ones(length(temps))
@@ -5,14 +9,17 @@ function prixObligation(c,M,t,i)
   prix=sum(cf./(1+i).^temps)
 
   return prix
-
-
 end
 
 
 
-
+# calcul de la duration d'une obligation
+# c coupon
+# M montant de l'enprunt obligataire
+# t maturité
+# i taux actuariel
 function duration(c,M,t,i)
+  
   temps=[0.5:0.5:t]
   cf=c*ones(length(temps))
   cf[end]=cf[end]+M
@@ -24,7 +31,7 @@ end
 
 
 
-
+#calcul de la convexité
 function convexité(c,M,t,i)
   temps=[0.5:0.5:t]
   cf=c*ones(length(temps))
