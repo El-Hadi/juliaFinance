@@ -15,7 +15,7 @@ end
 
 # calcul de la duration d'une obligation
 # c coupon
-# M montant de l'enprunt obligataire
+# M montant de l'emprunt obligataire
 # t maturité
 # i taux actuariel
 function duration(c,M,t,i)
