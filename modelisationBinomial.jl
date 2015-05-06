@@ -32,10 +32,32 @@ function zeroCouponValution(notionel,t,q, s, u, d)
   end
 
   #fo=fo./r
-  return fo
+  return fo[t,1]
+
+
+end
+zeroCouponValution(100,10,0.5,0.05,1.1,0.9)
+
+function forwardLatice(notionel,tf,tz,q, s, u, d)
+  tf=tf+1
+  #tz=tz+1
+  zeroCoup=zeroCouponValution(notionel,tz,q, s, u, d)
+  fo=zeros(tf,tf)
+  fo[:,end]=100
+  r=arbreBinomial(s,u,d,tz)
+
+  r=r[end-tf+1:end,1:tf]
+  for j in tf-1:-1:1
+    for i in tf-j+1:tf
+      # fo[i,j]=i+j
+      fo[i,j]= (q*fo[i-1,j+1]+(1-q)*fo[i,j+1])/(1+r[i,j])
+
+    end
+  end
+  return 100*zeroCoup/fo[end,1]
+
 
 
 end
 
-#forwardLatice(100.,10,0.5, 0.05,1.1,0.9)
 
