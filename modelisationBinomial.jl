@@ -6,9 +6,9 @@ function arbreBinomial(s,u,d,t)
   price=zeros(t,t)
   #price[1,1]=s
   for j in 1:t
-    for i in t:-1:t-j+1
+  for i in t:-1:t-j+1
 
-      price[i,j]=s*u^(t-i)*d^(j-t+i-1)
+price[i,j]=s*u^(t-i)*d^(j-t+i-1)
     end
   end
 
@@ -19,6 +19,7 @@ end
 
 
 function forwardLatice(notionel,t,q, s, u, d)
+  t=t+1
   fo=zeros(t,t)
   fo[:,end]=notionel
   r=arbreBinomial(s,u,d,t)
@@ -36,5 +37,5 @@ function forwardLatice(notionel,t,q, s, u, d)
 
 end
 
-forwardLatice(100.,10,0.5, 0.05,1.1,0.9)
+#forwardLatice(100.,10,0.5, 0.05,1.1,0.9)
 
