@@ -18,7 +18,7 @@ price[i,j]=s*u^(t-i)*d^(j-t+i-1)
 end
 
 
-function forwardLatice(notionel,t,q, s, u, d)
+function zeroCouponValution(notionel,t,q, s, u, d)
   t=t+1
   fo=zeros(t,t)
   fo[:,end]=notionel
