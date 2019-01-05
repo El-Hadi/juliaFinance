@@ -6,11 +6,11 @@ function échéancierAnnuité(M,n,i)
   #M montant de l'emprunt
   #i taux d'intéret
   #n durée de l'emrpunt
-  n=float(n)
-  A=M/((1-(1+i)^-n)/i)
+  #n=float(n)
+  A=M/((1-(1+i)^-float(n))/i)
   eche=zeros(n,5)
   eche[1,1]=M
-  eche[:,2]=A
+  eche[:,2]=A*ones(n,1)
   eche[1,3]=eche[1,1]*i
   eche[1,4]=eche[1,2]-eche[1,3]
   eche[1,5]=eche[1,1]-eche[1,4]
